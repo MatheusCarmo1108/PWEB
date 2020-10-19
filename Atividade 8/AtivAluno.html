@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 8 - Aluno</title>
+</head>
+<body>
+<script>
+
+var esc = parseInt(prompt("Escolha(1,2,3):"));
+
+if(esc == 1){
+    var Aluno = new Object(),
+        ra = "vazio",
+        nome = "vazio";
+
+
+    Aluno[ra] = "0030481911049";
+    Aluno[nome] = "Matheus do Carmo de Oliveira";
+    alert("Dados do Aluno");
+    alert("RA: "+ Aluno[ra]);
+    alert("Nome: "+ Aluno[nome]);
+}
+if(esc == 2){
+    var Aluno ={
+        nome:"Matheus do Carmo de Oliveira",
+        ra: "0030481911049"
+    };
+    alert("Dados do Aluno");
+    alert("RA: "+ Aluno.ra);
+    alert("Nome: "+ Aluno.nome);
+}
+
+if(esc ==3){
+    var Aluno = {};
+    Aluno.ra = "0030481911049";
+    Aluno.nome ="Matheus do Carmo de Oliveira";
+    
+    alert("Dados do Aluno");
+    alert("RA: "+ Aluno.ra);
+    alert("Nome: "+ Aluno.nome);
+}
+</script>  
+</body>
+</html>

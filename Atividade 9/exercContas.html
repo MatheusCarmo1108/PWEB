@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício de Contas a Pagar</title>
+</head>
+<body>
+    <script>
+
+
+
+function Conta() {
+    var nome,banco,numeroConta,saldo;
+    //GET
+    this.getNomec = function() {
+        return nome;
+    }
+    this.getBanco = function() {
+        return banco;
+    }
+    this.getNum = function() {
+        return numeroConta;
+    }
+    this.getSaldo = function() {
+        return saldo;
+    }
+    //SET
+    this.setNomec = function(value) {
+        nome = value;
+    }
+    this.setBanco = function(value) {
+        banco = value;
+    }
+    this.setNum = function(value) {
+        numeroConta = value;
+    }
+    this.setSaldo = function(value) {
+        saldo = value;
+    }
+}
+
+function Corrente(){
+    var saldoEspec;
+    this.getSaldoEspec = function() {
+        return saldoEspec;
+    }
+    this.setSaldoEspec = function(value) {
+        saldoEspec = value;
+    }
+}
+
+function Poupanca(){
+    var juros,dtVenc;
+    //GET
+    this.getJuros = function() {
+        return juros;
+    }
+    this.getVencimento = function() {
+        return dtVenc;
+    }
+    //SET
+    this.setJuros = function(value) {
+        juros = value;
+    }
+    this.setVencimento = function(value) {
+        dtVenc = value;
+    }
+}
+
+Corrente.prototype = new Conta();
+Poupanca.prototype = new Conta();
+
+aCorrente = new Corrente();
+aPoupanca = new Poupanca();
+
+aCorrente.setNomec("Aparecida do Carmo");
+aCorrente.setBanco("Caixa");
+aCorrente.setNum("0001-C");
+aCorrente.setSaldo("2000,00");
+aCorrente.setSaldoEspec("450,90");
+
+aPoupanca.setNomec("Joao Domiciano");
+aPoupanca.setBanco("Caixa");
+aPoupanca.setNum("0001-P");
+aPoupanca.setSaldo("1000,00");
+aPoupanca.setJuros("10,99%");
+aPoupanca.setVencimento("12/01/2021");
+
+alert('Nome:             ' + aCorrente.getNomec() + 
+    '\nBanco:            ' + aCorrente.getBanco() + 
+    '\nNúmero:           ' + aCorrente.getNum() + 
+    '\nSaldo:          R$' + aCorrente.getSaldo() + 
+    '\nSaldo Especial: R$' + aCorrente.getSaldoEspec());
+
+alert('Nome:              ' + aPoupanca.getNomec() + 
+    '\nBanco:             ' + aPoupanca.getBanco() + 
+    '\nNúmero:            ' + aPoupanca.getNum() + 
+    '\nSaldo:           R$' + aPoupanca.getSaldo() + 
+    '\nJuros:           R$' + aPoupanca.getJuros() + 
+    '\nData Vencimento:   ' + aPoupanca.getVencimento());
+
+
+    </script>
+</body>
+
+</html>
